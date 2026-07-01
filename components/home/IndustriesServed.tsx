@@ -3,26 +3,48 @@
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
-import { Tractor, Factory, UtensilsCrossed, Building2, Milk } from "lucide-react";
 
 const industries = [
-  { icon: Tractor, title: "Agriculture & Agro-Based", feedstock: "Crop residue, paddy straw, sugarcane trash", color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-200" },
-  { icon: Factory, title: "Sugar & Distillery", feedstock: "Press mud, spent wash, bagasse", color: "text-forest-600", bg: "bg-forest-50", border: "border-forest-200" },
-  { icon: UtensilsCrossed, title: "Food & FMCG", feedstock: "Food processing waste, expired food", color: "text-orange-600", bg: "bg-orange-50", border: "border-orange-200" },
-  { icon: Building2, title: "Municipal Solid Waste", feedstock: "Segregated organic MSW, market waste", color: "text-sky-600", bg: "bg-sky-50", border: "border-sky-200" },
-  { icon: Milk, title: "Dairy & Poultry", feedstock: "Cattle dung, poultry litter, dairy effluent", color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-200" },
+  {
+    title: "Agriculture & Agro-Based",
+    image: "/images/industry/agri.png",
+    description: "Converts farm waste (straw, husk, Napier grass) into energy and fertilizer.",
+  },
+  {
+    title: "Sugar & Distillery",
+    image: "/images/industry/sugar.png",
+    description: "Processes press mud and spent wash into highly profitable CBG.",
+  },
+  {
+    title: "Food Processing & FMCG",
+    image: "/images/industry/food.png",
+    description: "Reduces disposal costs of food/vegetable waste while generating clean fuel.",
+  },
+  {
+    title: "Municipal Solid Waste",
+    image: "/images/industry/msw.png",
+    description: "Supports Smart City & Swachh Bharat initiatives via urban wet waste processing.",
+  },
+  {
+    title: "Dairy & Poultry Farms",
+    image: "/images/industry/dairy.png",
+    description: "Utilizes cow dung and poultry litter for captive or commercial energy generation.",
+  },
 ];
 
 export default function IndustriesServed() {
   return (
-    <section className="py-section bg-steel-50/50" aria-label="Industries served">
+    <section className="py-24 bg-steel-900 text-white border-t border-steel-800">
       <Container>
         <SectionHeading
-          badge="Industries We Serve"
-          title="CBG Solutions Across "
-          highlight="Industries"
-          subtitle="We design feedstock-specific CBG plants for diverse organic waste streams across India's key industrial sectors."
+          badge="Markets We Serve"
+          title="Transforming Waste Across Industries"
+          description="We tailor our CBG solutions to handle diverse organic feedstocks from multiple sectors."
+          centered
+          className="mb-16"
+          light
         />
 
         <motion.div
@@ -30,24 +52,28 @@ export default function IndustriesServed() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4"
+          className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6"
         >
-          {industries.map((industry) => (
+          {industries.map((ind, index) => (
             <motion.div
-              key={industry.title}
+              key={index}
               variants={fadeInUp}
-              whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className={`relative group rounded-[var(--radius-card)] ${industry.bg} border ${industry.border} p-6 text-center hover:shadow-card transition-all duration-300 cursor-pointer`}
+              className="bg-steel-800 rounded-2xl overflow-hidden border border-steel-700 hover:border-forest-500 transition-colors group"
             >
-              <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl ${industry.bg} mb-4`}>
-                <industry.icon className={`h-7 w-7 ${industry.color}`} />
+              <div className="h-40 w-full relative">
+                <ImagePlaceholder
+                  src={ind.image}
+                  alt={ind.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  isPlaceholder={true}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-steel-900 via-transparent to-transparent opacity-80" />
               </div>
-              <h3 className="font-heading text-body-sm font-bold text-steel-900 mb-2">
-                {industry.title}
-              </h3>
-              <p className="text-caption text-steel-500 leading-relaxed">
-                {industry.feedstock}
-              </p>
+              <div className="p-5">
+                <h3 className="font-heading text-lg font-bold text-white mb-2">{ind.title}</h3>
+                <p className="text-steel-400 text-sm leading-relaxed">{ind.description}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

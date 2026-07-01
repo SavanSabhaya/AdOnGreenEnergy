@@ -1,11 +1,22 @@
-import type { Metadata } from "next";
-import ContactPage from "./ContactPage";
+import ContactHero from "@/components/contact/ContactHero";
+import ContactForm from "@/components/contact/ContactForm";
+import ContactInfo from "@/components/contact/ContactInfo";
+import LocationMap from "@/components/contact/LocationMap";
+import Container from "@/components/ui/Container";
 
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Get in touch with ADON Green Energy for CBG plant consultations, SATAT registration support, and project inquiries. Ahmedabad, India.",
-};
-
-export default function Contact() {
-  return <ContactPage />;
+export default function ContactPage() {
+  return (
+    <>
+      <ContactHero />
+      <section className="py-24 bg-white">
+        <Container>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto">
+            <ContactInfo />
+            <ContactForm />
+          </div>
+        </Container>
+      </section>
+      <LocationMap />
+    </>
+  );
 }

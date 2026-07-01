@@ -3,92 +3,65 @@
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
+import Badge from "@/components/ui/Badge";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
-import { MapPin, Zap, Leaf } from "lucide-react";
 import { projects } from "@/lib/data/projects";
+import { MapPin, Leaf } from "lucide-react";
 
 export default function FeaturedProjects() {
-  const featured = projects.filter((p) => p.status === "Commissioned").slice(0, 4);
+  const featured = projects.slice(0, 4);
 
   return (
-    <section className="py-section bg-steel-50/50" aria-label="Featured projects">
+    <section className="py-24 bg-white">
       <Container>
-        <SectionHeading
-          badge="Our Work"
-          title="Commissioned CBG "
-          highlight="Plants"
-          subtitle="Proven track record across multiple states and feedstock types."
-        />
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <SectionHeading
+            badge="Our Portfolio"
+            title="Featured Active Projects"
+            description="Developing large-scale CBG facilities across India."
+            className="mb-0"
+          />
+          <Button href="/projects" variant="outline" className="shrink-0">
+            View All Projects
+          </Button>
+        </div>
 
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {featured.map((project) => (
             <motion.div
               key={project.id}
               variants={fadeInUp}
-              whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="group bg-white rounded-[var(--radius-card)] overflow-hidden shadow-soft hover:shadow-card transition-all duration-300 border border-steel-100"
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-card transition-all duration-300 border border-steel-100"
             >
-              {/* Top accent bar */}
-              <div className="h-1.5 bg-gradient-to-r from-forest-600 to-forest-400" />
-
+              <div className="bg-gradient-to-r from-amber-500 to-amber-400 h-2 w-full" />
               <div className="p-6">
-                {/* Status badge */}
-                <Badge variant="success" size="sm">
-                  {project.status}
-                </Badge>
-
-                {/* Client name */}
-                <h3 className="font-heading text-body font-bold text-steel-900 mt-3 mb-4 line-clamp-2">
-                  {project.clientName}
-                </h3>
-
-                {/* Details */}
-                <div className="space-y-2.5 text-body-sm text-steel-500">
+                <div className="flex items-center justify-between mb-4">
+                  <Badge variant="warning">{project.status}</Badge>
+                  <span className="text-caption font-semibold text-steel-400">{project.tpdCapacity}</span>
+                </div>
+                <h3 className="font-heading text-lg font-bold text-steel-900 mb-3">{project.clientName}</h3>
+                
+                <div className="space-y-2 text-sm text-steel-600">
                   <div className="flex items-center gap-2">
                     <MapPin className="h-4 w-4 text-forest-500 shrink-0" />
                     <span>{project.location}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Zap className="h-4 w-4 text-amber-500 shrink-0" />
-                    <span className="font-semibold text-steel-700">{project.tpdCapacity}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Leaf className="h-4 w-4 text-forest-500 shrink-0" />
                     <span>{project.feedstockType}</span>
                   </div>
                 </div>
-
-                {/* Highlights */}
-                {project.highlights && (
-                  <div className="flex flex-wrap gap-1.5 mt-4">
-                    {project.highlights.map((h) => (
-                      <span
-                        key={h}
-                        className="px-2 py-0.5 rounded text-[0.625rem] font-medium bg-steel-50 text-steel-600 border border-steel-100"
-                      >
-                        {h}
-                      </span>
-                    ))}
-                  </div>
-                )}
               </div>
             </motion.div>
           ))}
         </motion.div>
-
-        <div className="text-center mt-10">
-          <Button href="/projects" variant="outline" showArrow>
-            View All Projects
-          </Button>
-        </div>
       </Container>
     </section>
   );

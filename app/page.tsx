@@ -11,7 +11,7 @@ import Testimonials from "@/components/home/Testimonials";
 import BlogPreview from "@/components/home/BlogPreview";
 import CTABanner from "@/components/home/CTABanner";
 
-export default function HomePage() {
+export default function Home() {
   return (
     <>
       <Hero />

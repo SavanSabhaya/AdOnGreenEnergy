@@ -9,8 +9,11 @@ interface SectionHeadingProps {
   title: string;
   highlight?: string;
   subtitle?: string;
+  description?: string;
   align?: "left" | "center";
+  centered?: boolean;
   theme?: "light" | "dark";
+  light?: boolean;
   className?: string;
 }
 
@@ -19,10 +22,16 @@ export default function SectionHeading({
   title,
   highlight,
   subtitle,
-  align = "center",
-  theme = "light",
+  description,
+  align,
+  centered,
+  theme,
+  light,
   className,
 }: SectionHeadingProps) {
+  const finalAlign = centered ? "center" : (align || "center");
+  const finalTheme = light ? "dark" : (theme || "light");
+  const finalSubtitle = description || subtitle;
   const titleParts = highlight
     ? title.split(highlight)
     : [title];
@@ -35,7 +44,7 @@ export default function SectionHeading({
       viewport={{ once: true, amount: 0.3 }}
       className={cn(
         "mb-12 lg:mb-16",
-        align === "center" ? "text-center mx-auto max-w-3xl" : "max-w-2xl",
+        finalAlign === "center" ? "text-center mx-auto max-w-3xl" : "max-w-2xl",
         className
       )}
     >
@@ -44,7 +53,7 @@ export default function SectionHeading({
           variants={fadeInUp}
           className={cn(
             "inline-block px-4 py-1.5 rounded-full text-caption font-semibold tracking-widest uppercase mb-4",
-            theme === "light"
+            finalTheme === "light"
               ? "bg-forest-100 text-forest-700 border border-forest-200"
               : "bg-forest-900/50 text-forest-400 border border-forest-700/30"
           )}
@@ -56,14 +65,14 @@ export default function SectionHeading({
         variants={textReveal}
         className={cn(
           "font-heading text-h2 font-bold tracking-tight",
-          theme === "light" ? "text-steel-950" : "text-white"
+          finalTheme === "light" ? "text-steel-950" : "text-white"
         )}
       >
         {highlight
           ? (
             <>
               {titleParts[0]}
-              <span className={theme === "light" ? "gradient-text" : "text-forest-400"}>
+              <span className={finalTheme === "light" ? "gradient-text" : "text-forest-400"}>
                 {highlight}
               </span>
               {titleParts[1]}
@@ -71,15 +80,15 @@ export default function SectionHeading({
           )
           : title}
       </motion.h2>
-      {subtitle && (
+      {finalSubtitle && (
         <motion.p
           variants={textReveal}
           className={cn(
             "mt-4 text-body-lg leading-relaxed",
-            theme === "light" ? "text-steel-500" : "text-steel-300"
+            finalTheme === "light" ? "text-steel-500" : "text-steel-300"
           )}
         >
-          {subtitle}
+          {finalSubtitle}
         </motion.p>
       )}
     </motion.div>

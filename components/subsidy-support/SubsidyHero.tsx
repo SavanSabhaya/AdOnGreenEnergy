@@ -1,0 +1,26 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Container from "@/components/ui/Container";
+import { fadeInUp } from "@/lib/animations";
+
+export default function SubsidyHero() {
+  return (
+    <section className="py-20 lg:py-28 bg-forest-900 overflow-hidden relative">
+      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`, backgroundSize: "60px 60px" }} />
+      <Container className="relative z-10 text-center">
+        <motion.div variants={fadeInUp} initial="hidden" animate="visible">
+          <span className="inline-block px-4 py-1.5 rounded-full text-caption font-semibold tracking-widest uppercase mb-6 bg-forest-800/50 text-forest-100 border border-forest-500/30 backdrop-blur-sm">
+            Financial Incentives
+          </span>
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-h1 font-bold text-white tracking-tight mb-6">
+            Government Backing for Your <span className="text-amber-400">CBG Investment</span>
+          </h1>
+          <p className="text-lg text-forest-200 max-w-2xl mx-auto">
+            Navigate the landscape of SATAT guaranteed offtake, MNRE Central Financial Assistance, and additional regional subsidies with our expert guidance.
+          </p>
+        </motion.div>
+      </Container>
+    </section>
+  );
+}

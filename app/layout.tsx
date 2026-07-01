@@ -78,6 +78,46 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${dmSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://adongreenenergy.in/#organization",
+                  "name": "ADON Equipments Pvt. Ltd.",
+                  "alternateName": "ADON Green Energy",
+                  "url": "https://adongreenenergy.in",
+                  "logo": "https://adongreenenergy.in/images/company/about.png",
+                  "description": "ADON is India's specialist EPC company delivering end-to-end Compressed Biogas (CBG) plant solutions — from design, procurement, and construction to commissioning.",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91 98XXX XXXXX",
+                    "contactType": "sales",
+                    "email": "projects@adongreenenergy.in"
+                  }
+                },
+                {
+                  "@type": "LocalBusiness",
+                  "@id": "https://adongreenenergy.in/#localbusiness",
+                  "name": "ADON Green Energy - Corporate Office",
+                  "image": "https://adongreenenergy.in/images/company/about.png",
+                  "telephone": "+91 98XXX XXXXX",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Pending Exact Address",
+                    "addressLocality": "Ahmedabad",
+                    "addressRegion": "Gujarat",
+                    "addressCountry": "IN"
+                  },
+                  "url": "https://adongreenenergy.in"
+                }
+              ]
+            })
+          }}
+        />
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>

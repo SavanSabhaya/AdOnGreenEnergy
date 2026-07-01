@@ -36,9 +36,7 @@ export default function Card({
   return (
     <motion.div
       variants={fadeInUp}
-      initial="rest"
-      whileHover={hover ? "hover" : undefined}
-      animate="rest"
+      whileHover={hover ? { y: -8, boxShadow: "0 20px 60px -15px rgba(0, 0, 0, 0.15)" } : undefined}
       className={cn(
         "rounded-[var(--radius-card)] overflow-hidden transition-all duration-300",
         cardVariants[variant],
@@ -46,11 +44,6 @@ export default function Card({
         hover && "cursor-pointer",
         className
       )}
-      style={hover ? {
-        // @ts-expect-error -- Motion values are fine here
-        ...cardHover.rest,
-      } : undefined}
-      whileHover={hover ? cardHover.hover : undefined}
     >
       {children}
     </motion.div>

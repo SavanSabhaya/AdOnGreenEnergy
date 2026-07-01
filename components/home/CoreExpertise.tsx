@@ -4,64 +4,51 @@ import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
-import {
-  Compass, Wheat, FlaskConical, Filter, Gauge, Sprout,
-} from "lucide-react";
+import { Wrench, Leaf, Zap, Filter, Flame, RefreshCw } from "lucide-react";
 
 const expertise = [
   {
-    icon: Compass,
-    title: "Plant Design",
-    description: "Complete engineering from P&ID to civil design, optimized for your feedstock and capacity.",
-    color: "from-forest-600 to-forest-500",
-    bgLight: "bg-forest-50",
+    icon: Wrench,
+    title: "CBG Plant Engineering & Design",
+    description: "End-to-end plant design and engineering tailored to your specific feedstock and capacity requirements.",
   },
   {
-    icon: Wheat,
-    title: "Feedstock Systems",
-    description: "Engineered pre-treatment for agricultural, dairy, food waste, and MSW feedstocks.",
-    color: "from-amber-500 to-amber-400",
-    bgLight: "bg-amber-50",
+    icon: Leaf,
+    title: "Feedstock Handling & Pre-treatment",
+    description: "Specialized systems for agricultural waste, press mud, food waste, and Napier grass with precise size reduction and mixing.",
   },
   {
-    icon: FlaskConical,
-    title: "Anaerobic Digestion",
-    description: "CSTR digesters in RCC or GFS tanks, designed for maximum methane yield.",
-    color: "from-forest-600 to-forest-500",
-    bgLight: "bg-forest-50",
+    icon: Zap,
+    title: "Anaerobic Digestion (CSTR/RCC)",
+    description: "Advanced CSTR and RCC digesters with mesophilic or thermophilic operation, mechanical agitation, and optimal HRT.",
   },
   {
     icon: Filter,
-    title: "Gas Purification",
-    description: "VPSA and membrane purification systems producing >96% pure biomethane.",
-    color: "from-sky-500 to-sky-400",
-    bgLight: "bg-sky-50",
+    title: "Biogas Purification (VPSA/Membrane)",
+    description: "High-efficiency VPSA and Membrane separation systems achieving 96–98% biomethane purity, alongside robust H2S removal.",
   },
   {
-    icon: Gauge,
-    title: "Compression & Bottling",
-    description: "High-pressure compression up to 250 bar with cascade filling and tube trailers.",
-    color: "from-steel-600 to-steel-500",
-    bgLight: "bg-steel-50",
+    icon: Flame,
+    title: "Gas Compression & Bottling",
+    description: "Multi-stage compression up to 250 bar with mobile cascade filling stations and priority panel sequences.",
   },
   {
-    icon: Sprout,
-    title: "Bio-Fertilizer",
-    description: "Solid-liquid separation and digestate processing for marketable organic fertilizer.",
-    color: "from-emerald-500 to-emerald-400",
-    bgLight: "bg-emerald-50",
+    icon: RefreshCw,
+    title: "Bio-Fertilizer Management",
+    description: "Industrial Solid-Liquid Separators (SLS) to recover high-quality dry organic manure and NPK-rich liquid fertilizer.",
   },
 ];
 
 export default function CoreExpertise() {
   return (
-    <section className="py-section bg-steel-50/50" aria-label="Core expertise">
+    <section className="py-24 bg-steel-50 border-t border-steel-100">
       <Container>
         <SectionHeading
-          badge="Core Expertise"
-          title="Full-Spectrum CBG Plant "
-          highlight="Technology"
-          subtitle="Every system, every component — engineered, procured, installed, and commissioned by one team under one contract."
+          badge="Our Expertise"
+          title="End-to-End EPC Solutions"
+          description="We provide comprehensive engineering, procurement, and construction services across the entire CBG value chain."
+          centered
+          className="mb-16"
         />
 
         <motion.div
@@ -69,32 +56,25 @@ export default function CoreExpertise() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {expertise.map((item) => (
-            <motion.div
-              key={item.title}
-              variants={fadeInUp}
-              whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="group relative bg-white rounded-[var(--radius-card)] p-6 lg:p-8 shadow-soft hover:shadow-card transition-all duration-300 border border-transparent hover:border-forest-100"
-            >
-              {/* Icon */}
-              <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} shadow-md mb-5`}>
-                <item.icon className="h-6 w-6 text-white" />
-              </div>
-
-              {/* Content */}
-              <h3 className="font-heading text-h4 font-bold text-steel-900 mb-3">
-                {item.title}
-              </h3>
-              <p className="text-body-sm text-steel-500 leading-relaxed">
-                {item.description}
-              </p>
-
-              {/* Hover accent line */}
-              <div className="absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-forest-500 to-emerald-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
-            </motion.div>
-          ))}
+          {expertise.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-elevated transition-all duration-300 border border-steel-100 group relative overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-forest-500 to-amber-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                <div className="w-14 h-14 bg-forest-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-forest-100 transition-colors">
+                  <Icon className="w-7 h-7 text-forest-600" />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-steel-900 mb-3">{item.title}</h3>
+                <p className="text-steel-600 leading-relaxed text-sm">{item.description}</p>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </Container>
     </section>

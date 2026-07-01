@@ -4,40 +4,30 @@ import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
-import { CheckCircle2, Wrench, FileCheck, Users, Handshake } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
-const reasons = [
-  {
-    icon: Wrench,
-    title: "End-to-End EPC Delivery",
-    description: "Single-window accountability from concept design to plant commissioning. No finger-pointing, no coordination headaches — one team, one contract.",
-  },
-  {
-    icon: FileCheck,
-    title: "SATAT & Subsidy Expertise",
-    description: "Deep knowledge of SATAT registration, MNRE Central Financial Assistance, and GOBARdhan schemes. We help you maximize subsidies and secure guaranteed offtake.",
-  },
-  {
-    icon: Users,
-    title: "Experienced Leadership",
-    description: "Our team brings hands-on experience across 6+ commissioned CBG plants in 3 states, with expertise spanning diverse feedstocks and plant configurations.",
-  },
-  {
-    icon: Handshake,
-    title: "Proven Technology Partners",
-    description: "Strategic partnerships with leading equipment manufacturers for VPSA, membrane purification, compressors, and GFS tank systems — ensuring proven, reliable technology in every plant.",
-  },
+const differentiators = [
+  "MC-CSTR with Thermophilic Digestion",
+  "Up to 20% raw biogas generation",
+  "Less multi-raw-material required",
+  "≤3% loss of Bio-CNG via VPSA technology",
+  "≥96% Bio-CNG purity",
+  "Minimum timeline to project commissioning",
+  "1-year full guarantee + expert on-site engineer",
+  "Low capital investment, ROI within 30 months",
+  "Government benefits and buyback guarantee",
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-section" aria-label="Why choose ADON">
+    <section className="py-24 bg-forest-50">
       <Container>
         <SectionHeading
-          badge="Why ADON"
-          title="Why Clients Choose "
-          highlight="ADON"
-          subtitle="In a sector where project delays and cost overruns are common, we deliver on time, on budget, and on spec."
+          badge="Why Choose ADON"
+          title="The ADON Advantage"
+          description="Industry-leading technology and guaranteed performance for maximum ROI."
+          centered
+          className="mb-16"
         />
 
         <motion.div
@@ -45,27 +35,16 @@ export default function WhyChooseUs() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid sm:grid-cols-2 gap-6 lg:gap-8"
+          className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
-          {reasons.map((reason) => (
+          {differentiators.map((diff, index) => (
             <motion.div
-              key={reason.title}
+              key={index}
               variants={fadeInUp}
-              className="group flex gap-5 p-6 lg:p-8 rounded-[var(--radius-card)] bg-white border border-steel-100 hover:border-forest-200 hover:shadow-card transition-all duration-300"
+              className="flex items-start gap-3 bg-white p-5 rounded-xl border border-steel-100 shadow-sm"
             >
-              <div className="shrink-0">
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-forest-50 group-hover:bg-forest-100 transition-colors">
-                  <reason.icon className="h-6 w-6 text-forest-600" />
-                </div>
-              </div>
-              <div>
-                <h3 className="font-heading text-h4 font-bold text-steel-900 mb-2">
-                  {reason.title}
-                </h3>
-                <p className="text-body-sm text-steel-500 leading-relaxed">
-                  {reason.description}
-                </p>
-              </div>
+              <CheckCircle2 className="w-5 h-5 text-forest-500 shrink-0 mt-0.5" />
+              <p className="text-steel-700 text-sm font-medium leading-relaxed">{diff}</p>
             </motion.div>
           ))}
         </motion.div>
