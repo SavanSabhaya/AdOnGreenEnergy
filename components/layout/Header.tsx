@@ -12,7 +12,19 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
+  { 
+    label: "Services", 
+    href: "/services",
+    subLinks: [
+      { label: "Turnkey Solution", href: "/services/turnkey-solution" },
+      { label: "Procurement", href: "/services/procurement" },
+      { label: "Consultancy", href: "/services/consultancy" },
+      { label: "R&D", href: "/services/rd" },
+      { label: "O&M", href: "/services/om" },
+      { label: "Bio-CNG Retails", href: "/services/bio-cng-retails" },
+      { label: "NOCs & Approvals", href: "/services/nocs-approvals" },
+    ]
+  },
   { label: "Industries", href: "/industries" },
   { label: "Projects", href: "/projects" },
   { label: "Resources", href: "/resources" },
@@ -22,7 +34,16 @@ const navLinks = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileSubmenus, setOpenMobileSubmenus] = useState<string[]>([]);
   const pathname = usePathname();
+
+  const toggleMobileSubmenu = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setOpenMobileSubmenus(prev => 
+      prev.includes(href) ? prev.filter(item => item !== href) : [...prev, href]
+    );
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,27 +85,49 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = pathname === link.href || (link.subLinks && pathname.startsWith(link.href));
               return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    "relative px-3 py-2 text-body-sm font-medium rounded-lg transition-colors duration-200",
-                    isActive
-                      ? "text-forest-700"
-                      : "text-steel-600 hover:text-forest-700 hover:bg-forest-50"
+                <div key={link.href} className="relative group">
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      "relative px-3 py-2 text-body-sm font-medium rounded-lg transition-colors duration-200 flex items-center gap-1",
+                      isActive
+                        ? "text-forest-700"
+                        : "text-steel-600 hover:text-forest-700 hover:bg-forest-50"
+                    )}
+                  >
+                    {link.label}
+                    {link.subLinks && <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />}
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeNavIndicator"
+                        className="absolute bottom-0 left-3 right-3 h-0.5 bg-forest-600 rounded-full"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                  </Link>
+
+                  {/* Desktop Dropdown */}
+                  {link.subLinks && (
+                    <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left group-hover:scale-100 scale-95 z-50">
+                      <div className="bg-white rounded-xl shadow-elevated border border-steel-100 py-2 w-56 flex flex-col">
+                        {link.subLinks.map((subLink) => (
+                          <Link
+                            key={subLink.href}
+                            href={subLink.href}
+                            className={cn(
+                              "px-4 py-2.5 text-sm font-medium transition-colors hover:bg-forest-50 hover:text-forest-700",
+                              pathname === subLink.href ? "text-forest-700 bg-forest-50/50" : "text-steel-600"
+                            )}
+                          >
+                            {subLink.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   )}
-                >
-                  {link.label}
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeNavIndicator"
-                      className="absolute bottom-0 left-3 right-3 h-0.5 bg-forest-600 rounded-full"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </Link>
+                </div>
               );
             })}
           </nav>
@@ -154,26 +197,74 @@ export default function Header() {
 
               <div className="p-4 space-y-1">
                 {navLinks.map((link, index) => {
-                  const isActive = pathname === link.href;
+                  const isActive = pathname === link.href || (link.subLinks && pathname.startsWith(link.href));
+                  const isSubmenuOpen = openMobileSubmenus.includes(link.href);
+                  
                   return (
                     <motion.div
                       key={link.href}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
+                      className="flex flex-col"
                     >
-                      <Link
-                        href={link.href}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className={cn(
-                          "flex items-center px-4 py-3 rounded-xl text-body font-medium transition-colors",
-                          isActive
-                            ? "bg-forest-50 text-forest-700 font-semibold"
-                            : "text-steel-700 hover:bg-steel-50"
+                      <div className="flex items-center w-full relative">
+                        <Link
+                          href={link.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={cn(
+                            "flex-1 flex items-center px-4 py-3 rounded-xl text-body font-medium transition-colors",
+                            isActive && !link.subLinks
+                              ? "bg-forest-50 text-forest-700 font-semibold"
+                              : "text-steel-700 hover:bg-steel-50",
+                            isActive && link.subLinks ? "text-forest-700 font-semibold" : ""
+                          )}
+                        >
+                          {link.label}
+                        </Link>
+                        
+                        {link.subLinks && (
+                          <button 
+                            onClick={(e) => toggleMobileSubmenu(e, link.href)}
+                            className="absolute right-2 p-2 rounded-lg text-steel-500 hover:bg-steel-100 hover:text-steel-800 transition-colors"
+                          >
+                            <ChevronDown className={cn("h-5 w-5 transition-transform duration-200", isSubmenuOpen && "rotate-180")} />
+                          </button>
                         )}
-                      >
-                        {link.label}
-                      </Link>
+                      </div>
+                      
+                      {/* Mobile Submenu Accordion */}
+                      {link.subLinks && (
+                        <AnimatePresence>
+                          {isSubmenuOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="pl-8 pr-4 py-2 flex flex-col space-y-1">
+                                {link.subLinks.map((subLink) => (
+                                  <Link
+                                    key={subLink.href}
+                                    href={subLink.href}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className={cn(
+                                      "px-4 py-2.5 rounded-lg text-sm font-medium transition-colors",
+                                      pathname === subLink.href
+                                        ? "bg-forest-50 text-forest-700 font-semibold"
+                                        : "text-steel-600 hover:bg-steel-50 hover:text-steel-900"
+                                    )}
+                                  >
+                                    {subLink.label}
+                                  </Link>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      )}
                     </motion.div>
                   );
                 })}
