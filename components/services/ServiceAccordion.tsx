@@ -74,9 +74,11 @@ const services = [
     title: "Solid-Liquid Separator (SLS) & Bio-Fertilizer",
     specs: [
       "Screw press separation of digested slurry (8-12% TS)",
-      "Produces solid organic manure (20-30% dry matter)",
-      "Produces NPK-rich liquid fraction for fertigation/irrigation",
-      "Reduces digestate handling cost by 30-50%",
+      "Produces solid organic manure (20-30% dry matter) rich in organic carbon",
+      "Produces NPK-rich liquid fraction — N: 1.5–3%, P: 1–2%, K: 1–2%, pH: 6.5–7.5",
+      "Liquid reusable for slurry dilution, fertigation, or irrigation — saves fresh water",
+      "Applications: agriculture, organic farming, fertigation systems, land reclamation",
+      "Reduces digestate handling cost by 30-50%, essential for plants > 5 TPD",
     ]
   }
 ];

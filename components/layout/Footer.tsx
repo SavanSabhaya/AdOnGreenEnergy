@@ -39,14 +39,8 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-3 mb-6 group">
-              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-forest-600 to-forest-400 shadow-md">
-                <span className="font-heading font-bold text-white text-lg">A</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-white text-lg leading-tight">ADON</span>
-                <span className="text-[0.625rem] font-semibold text-forest-400 tracking-widest uppercase leading-tight">
-                  Green Energy
-                </span>
+              <div className="relative flex items-center justify-start w-72 h-20 -ml-2">
+                <img src="/images/assets/logo.png" alt="ADON Green Energy" className="object-contain object-left w-full h-full" />
               </div>
             </Link>
             <p className="text-body-sm leading-relaxed text-steel-400 mb-6 max-w-xs">
@@ -54,17 +48,17 @@ export default function Footer() {
               solutions — from design to commissioning.
             </p>
             <div className="space-y-3 text-body-sm">
-              <div className="flex items-start gap-3">
+              <a href="https://maps.google.com/?q=Ahmedabad,Gujarat,India" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-forest-400 transition-colors">
                 <MapPin className="h-4 w-4 mt-0.5 text-forest-500 shrink-0" />
                 <span>Ahmedabad, Gujarat, India</span>
-              </div>
-              <a href="tel:+919825000000" className="flex items-center gap-3 hover:text-forest-400 transition-colors">
-                <Phone className="h-4 w-4 text-forest-500 shrink-0" />
-                <span>+91 98250 XXXXX</span>
               </a>
-              <a href="mailto:info@adongreenenergy.in" className="flex items-center gap-3 hover:text-forest-400 transition-colors">
+              <a href="tel:+918200517219" className="flex items-center gap-3 hover:text-forest-400 transition-colors">
+                <Phone className="h-4 w-4 text-forest-500 shrink-0" />
+                <span>+91-82005 17219</span>
+              </a>
+              <a href="mailto:info@adonequipment.com" className="flex items-center gap-3 hover:text-forest-400 transition-colors">
                 <Mail className="h-4 w-4 text-forest-500 shrink-0" />
-                <span>info@adongreenenergy.in</span>
+                <span>info@adonequipment.com</span>
               </a>
             </div>
           </div>

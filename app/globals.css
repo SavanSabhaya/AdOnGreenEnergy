@@ -52,8 +52,8 @@
   --color-accent-foreground: #0f172a;
 
   /* --- Typography --- */
-  --font-heading: "Inter", system-ui, sans-serif;
-  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-heading: "Poppins", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
 
   /* Font sizes with line heights */
   --text-display: 4.5rem;
@@ -184,30 +184,31 @@
   100% { background-position: 0% 50%; }
 }
 
-/* ===== Base Styles ===== */
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-body {
-  font-family: var(--font-body);
-  color: var(--color-foreground);
-  background-color: var(--color-background);
-  overflow-x: hidden;
-}
+  body {
+    font-family: var(--font-body);
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    overflow-x: hidden;
+  }
 
-::selection {
-  background-color: var(--color-forest-200);
-  color: var(--color-forest-950);
-}
+  ::selection {
+    background-color: var(--color-forest-200);
+    color: var(--color-forest-950);
+  }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--color-steel-950);
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: inherit;
+  }
 }
 
 /* ===== Custom Scrollbar ===== */

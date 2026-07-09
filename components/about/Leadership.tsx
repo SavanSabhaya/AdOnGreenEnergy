@@ -44,16 +44,21 @@ export default function Leadership() {
           className="grid md:grid-cols-3 gap-8"
         >
           {team.map((member, i) => (
-            <motion.div key={i} variants={fadeInUp} className="bg-white rounded-2xl p-6 shadow-sm border border-steel-100 text-center">
-              <div className="w-32 h-32 mx-auto bg-steel-200 rounded-full mb-6 flex items-center justify-center relative overflow-hidden">
-                <User className="w-16 h-16 text-steel-400" />
-                <div className="absolute top-2 right-2 bg-black/75 text-white text-[0.4rem] font-bold px-1 py-0.5 rounded-sm uppercase tracking-wider z-10 text-center leading-tight">
-                  PLACEHOLDER<br/>Real photo soon
-                </div>
+            <motion.div key={i} variants={fadeInUp} className="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-steel-100 flex flex-col group hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
+              <div className="w-full aspect-[4/3] bg-steel-100 relative overflow-hidden flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-tr from-steel-200 to-steel-50 opacity-60" />
+                <User className="w-20 h-20 text-steel-300 drop-shadow-sm group-hover:scale-110 transition-transform duration-700 ease-out" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-50" />
               </div>
-              <h3 className="font-heading text-xl font-bold text-steel-900 mb-1">{member.name}</h3>
-              <p className="text-forest-600 font-medium text-sm mb-4">{member.title}</p>
-              <p className="text-steel-600 text-sm leading-relaxed">{member.bio}</p>
+              <div className="p-6 md:p-8 flex flex-col flex-grow bg-white">
+                <h3 className="font-heading text-2xl font-bold text-steel-900 mb-2 group-hover:text-forest-700 transition-colors">{member.name}</h3>
+                <div className="mb-4">
+                  <span className="inline-block text-forest-700 font-bold text-xs uppercase tracking-wider bg-forest-50 px-3 py-1 rounded-full border border-forest-100/50">
+                    {member.title}
+                  </span>
+                </div>
+                <p className="text-steel-600 text-sm leading-relaxed flex-grow">{member.bio}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

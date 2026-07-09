@@ -39,26 +39,7 @@ export default function Header() {
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="hidden lg:block bg-forest-900 text-white">
-        <Container className="flex items-center justify-between py-2 text-body-sm">
-          <div className="flex items-center gap-6">
-            <a href="tel:+919825000000" className="flex items-center gap-2 hover:text-forest-300 transition-colors">
-              <Phone className="h-3.5 w-3.5" />
-              <span>+91 98250 XXXXX</span>
-            </a>
-            <a href="mailto:info@adongreenenergy.in" className="flex items-center gap-2 hover:text-forest-300 transition-colors">
-              <Mail className="h-3.5 w-3.5" />
-              <span>info@adongreenenergy.in</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-4 text-caption text-forest-200">
-            <span>SATAT Registered EPC Partner</span>
-            <span className="w-px h-4 bg-forest-700" />
-            <span>Ahmedabad, India</span>
-          </div>
-        </Container>
-      </div>
+    
 
       {/* Main Header */}
       <motion.header
@@ -75,16 +56,8 @@ export default function Header() {
         <Container className="flex items-center justify-between h-18 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group" aria-label="ADON Green Energy Home">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-forest-700 to-forest-500 shadow-md group-hover:shadow-lg transition-shadow">
-              <span className="font-heading font-bold text-white text-lg">A</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-bold text-steel-900 text-lg leading-tight tracking-tight">
-                ADON
-              </span>
-              <span className="text-[0.625rem] font-semibold text-forest-600 tracking-widest uppercase leading-tight">
-                Green Energy
-              </span>
+            <div className="relative flex items-center justify-center w-48 h-14">
+              <img src="/images/assets/logo.png" alt="ADON Green Energy" className="object-contain w-full h-full" />
             </div>
           </Link>
 
@@ -166,10 +139,9 @@ export default function Header() {
             >
               <div className="flex items-center justify-between p-4 border-b border-steel-100">
                 <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-forest-700 to-forest-500">
-                    <span className="font-heading font-bold text-white text-sm">A</span>
+                  <div className="relative flex items-center justify-center w-40 h-12">
+                    <img src="/images/assets/logo.png" alt="ADON Green Energy" className="object-contain w-full h-full" />
                   </div>
-                  <span className="font-heading font-bold text-steel-900">ADON</span>
                 </Link>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -212,13 +184,13 @@ export default function Header() {
                   Get Free Consultation
                 </Button>
                 <div className="mt-6 space-y-3 text-body-sm text-steel-500">
-                  <a href="tel:+919825000000" className="flex items-center gap-2 hover:text-forest-600">
+                  <a href="tel:+918200517219" className="flex items-center gap-2 hover:text-forest-600">
                     <Phone className="h-4 w-4" />
-                    +91 98250 XXXXX
+                    +91-82005 17219
                   </a>
-                  <a href="mailto:info@adongreenenergy.in" className="flex items-center gap-2 hover:text-forest-600">
+                  <a href="mailto:info@adonequipment.com" className="flex items-center gap-2 hover:text-forest-600">
                     <Mail className="h-4 w-4" />
-                    info@adongreenenergy.in
+                    info@adonequipment.com
                   </a>
                 </div>
               </div>

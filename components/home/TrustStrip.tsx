@@ -5,7 +5,7 @@ import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 export default function TrustStrip() {
   return (
-    <section className="bg-forest-900 border-y border-forest-800/50 py-12 relative z-20 -mt-8 shadow-elevated rounded-t-3xl md:rounded-t-none md:-mt-12 mx-4 md:mx-0">
+    <section className="bg-forest-900 text-white border-y border-forest-800/50 py-12 relative z-20 -mt-8 shadow-elevated rounded-t-3xl md:rounded-t-none md:-mt-12 mx-4 md:mx-0">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-forest-700/50">
           <div className="text-center px-4 pt-4 md:pt-0">

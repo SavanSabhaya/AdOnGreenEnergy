@@ -42,35 +42,35 @@ export const companyInfo = {
   mission:
     "To design, build, and commission high-performance CBG plants that maximize output, minimize downtime, and deliver measurable returns — while making India's SATAT vision a reality, one plant at a time.",
   founded: 2018,
-  email: "info@adongreenenergy.in",
-  phone: "+91 98250 XXXXX",
+  email: "info@adonequipment.com",
+  phone: "+91-82005 17219",
   website: "https://adongreenenergy.in",
   locations: {
     headquarters: {
       label: "Corporate Office",
-      address: "Ahmedabad, Gujarat, India",
-      fullAddress: "Ahmedabad, Gujarat – 380015, India",
+      address: "B-608, Shalin Square, Vatva, Ahmedabad",
+      fullAddress: "B-608, Shalin Square, Near Hathijan Circle, Vatva, Ahmedabad – 382445",
       mapUrl: "https://maps.google.com/?q=Ahmedabad+Gujarat+India",
     },
     manufacturing: {
       label: "Manufacturing Facility",
-      address: "Mahemdabad, Gujarat, India",
-      fullAddress: "Mahemdabad, Dist. Kheda, Gujarat, India",
+      address: "Plot No.53, RIDC, Mahemdabad",
+      fullAddress: "Plot No.53, RIDC, Rohisa Village Road, Mahemdabad, Ahmedabad – 387130",
       mapUrl: "https://maps.google.com/?q=Mahemdabad+Gujarat+India",
     },
   },
   contacts: {
     sales: {
-      name: "Ankit Jagani",
+      name: "Ankit R Jagani",
       title: "Director – Sales & Marketing",
-      phone: "+91 98250 XXXXX",
-      email: "ankit@adongreenenergy.in",
+      phone: "+91-82005 17219",
+      email: "info@adonequipment.com",
     },
     projects: {
       name: "Gajendra Saini",
       title: "AGM – CBG Division (Projects & Service)",
-      phone: "+91 98250 XXXXX",
-      email: "projects@adongreenenergy.in",
+      phone: "+91-63570 99393",
+      email: "biogas@adonequipment.com",
     },
   },
 };

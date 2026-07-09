@@ -1,24 +1,48 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { fadeInUp } from "@/lib/animations";
 
+const heroImages = [
+  "/images/assets/bio thermal.png",
+  "/images/assets/bio CNG.png",
+  "/images/assets/bio energy.png",
+  "/images/assets/green hydrogen.png"
+];
+
 export default function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-forest-950 transition-colors duration-1000">
       <div className="absolute inset-0 z-0">
-        <ImagePlaceholder
-          src="/images/plant/hero_bg.png"
-          alt="Large-scale industrial CBG plant at golden hour"
-          fill
-          priority
-          className="object-cover"
-          isPlaceholder={true}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest-950/90 via-forest-900/80 to-transparent" />
+        {heroImages.map((src, index) => (
+          <div 
+            key={src}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100 z-0' : 'opacity-0 -z-10'}`}
+          >
+            <ImagePlaceholder
+              src={src}
+              alt="Adon Green Energy"
+              fill
+              priority={index === 0}
+              className="object-cover object-right opacity-90"
+              isPlaceholder={false}
+            />
+          </div>
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-950/90 via-forest-900/80 to-transparent z-10" />
       </div>
 
       <Container className="relative z-10 py-20">
@@ -33,9 +57,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <span className="inline-block px-4 py-1.5 rounded-full text-caption font-semibold tracking-widest uppercase mb-6 bg-forest-800/50 text-forest-100 border border-forest-500/30 backdrop-blur-sm">
-              ADON Green Energy
-            </span>
+
             <h1 className="font-heading text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
               Supporting India's <span className="text-amber-400">Green Fuel</span> Revolution through CBG
             </h1>

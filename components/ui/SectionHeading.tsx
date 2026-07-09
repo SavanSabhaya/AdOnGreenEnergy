@@ -48,19 +48,7 @@ export default function SectionHeading({
         className
       )}
     >
-      {badge && (
-        <motion.span
-          variants={fadeInUp}
-          className={cn(
-            "inline-block px-4 py-1.5 rounded-full text-caption font-semibold tracking-widest uppercase mb-4",
-            finalTheme === "light"
-              ? "bg-forest-100 text-forest-700 border border-forest-200"
-              : "bg-forest-900/50 text-forest-400 border border-forest-700/30"
-          )}
-        >
-          {badge}
-        </motion.span>
-      )}
+
       <motion.h2
         variants={textReveal}
         className={cn(

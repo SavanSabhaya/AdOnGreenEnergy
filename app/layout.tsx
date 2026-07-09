@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Inter, DM_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import "./globals.css";
 
-const inter = Inter({
+const poppins = Poppins({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const dmSans = DM_Sans({
+const poppinsBody = Poppins({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -76,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${dmSans.variable} h-full antialiased`}>
+    <html lang="en" className={`${poppins.variable} ${poppinsBody.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <script
           type="application/ld+json"
@@ -94,9 +95,9 @@ export default function RootLayout({
                   "description": "ADON is India's specialist EPC company delivering end-to-end Compressed Biogas (CBG) plant solutions — from design, procurement, and construction to commissioning.",
                   "contactPoint": {
                     "@type": "ContactPoint",
-                    "telephone": "+91 98XXX XXXXX",
+                    "telephone": "+91-82005 17219",
                     "contactType": "sales",
-                    "email": "projects@adongreenenergy.in"
+                    "email": "info@adonequipment.com"
                   }
                 },
                 {
@@ -104,12 +105,13 @@ export default function RootLayout({
                   "@id": "https://adongreenenergy.in/#localbusiness",
                   "name": "ADON Green Energy - Corporate Office",
                   "image": "https://adongreenenergy.in/images/company/about.png",
-                  "telephone": "+91 98XXX XXXXX",
+                  "telephone": "+91-82005 17219",
                   "address": {
                     "@type": "PostalAddress",
-                    "streetAddress": "Pending Exact Address",
+                    "streetAddress": "B-608, Shalin Square, Near Hathijan Circle, Vatva",
                     "addressLocality": "Ahmedabad",
                     "addressRegion": "Gujarat",
+                    "postalCode": "382445",
                     "addressCountry": "IN"
                   },
                   "url": "https://adongreenenergy.in"
@@ -126,6 +128,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

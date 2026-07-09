@@ -92,7 +92,7 @@ export default function IndustryCards() {
                   </div>
                   
                   <div className="mt-auto pt-4 border-t border-steel-100">
-                    <p className="text-forest-700 font-medium text-sm italic">{ind.valueProp}</p>
+                    <p className="text-forest-700 font-medium text-sm">{ind.valueProp}</p>
                   </div>
                 </div>
               </motion.div>

@@ -14,7 +14,7 @@ interface ButtonProps {
   href?: string;
   onClick?: () => void;
   className?: string;
-  icon?: ElementType;
+  icon?: any;
   showArrow?: boolean;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;

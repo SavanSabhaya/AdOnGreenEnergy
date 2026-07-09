@@ -170,3 +170,44 @@ export const navUnderline: Variants = {
   rest: { scaleX: 0, originX: 0 },
   hover: { scaleX: 1, originX: 0, transition: transition.fast },
 };
+
+// Continuous floating animation
+export const floatingAnimation: Variants = {
+  rest: { y: 0 },
+  floating: {
+    y: [-10, 10, -10],
+    transition: {
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+};
+
+// Continuous floating & rotating animation
+export const floatingRotate: Variants = {
+  rest: { y: 0, rotate: 0 },
+  floating: {
+    y: [-15, 15, -15],
+    rotate: [-2, 2, -2],
+    transition: {
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+};
+
+// Glow pulse animation
+export const glowPulse: Variants = {
+  rest: { opacity: 0.6, scale: 0.95 },
+  pulsing: {
+    opacity: [0.6, 1, 0.6],
+    scale: [0.95, 1.05, 0.95],
+    transition: {
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+};

@@ -1,6 +1,8 @@
 import ServicesIntro from "@/components/services/ServicesIntro";
+import WhatIsCBG from "@/components/services/WhatIsCBG";
 import ServiceAccordion from "@/components/services/ServiceAccordion";
 import ComparisonTable from "@/components/services/ComparisonTable";
+import BenefitsOfCBG from "@/components/services/BenefitsOfCBG";
 import BrochureCTA from "@/components/services/BrochureCTA";
 
 export default function ServicesPage() {
@@ -19,9 +21,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <WhatIsCBG />
       <ServicesIntro />
       <ServiceAccordion />
       <ComparisonTable />
+      <BenefitsOfCBG />
       <BrochureCTA />
     </>
   );

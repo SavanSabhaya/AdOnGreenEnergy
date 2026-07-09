@@ -14,7 +14,7 @@ export default function AdditionalSupport() {
     },
     {
       title: "Viability Gap Funding (VGF)",
-      desc: "Eligible projects can tap into state-specific VGF mechanisms to bridge commercial shortfalls."
+      desc: "Eligible projects can tap into state-specific VGF mechanisms to bridge commercial shortfalls, especially for municipal waste-based and large-scale projects."
     },
     {
       title: "Priority Sector Lending",
@@ -22,8 +22,24 @@ export default function AdditionalSupport() {
     },
     {
       title: "Carbon Credits & ESG",
-      desc: "Generate verifiable carbon credits and fulfill corporate ESG mandates through green energy production."
-    }
+      desc: "Generate verifiable carbon credits and fulfill corporate ESG mandates through green energy production — eligible for green finance."
+    },
+    {
+      title: "State Government Support",
+      desc: "Land support & leasing, electricity subsidies, single-window clearance, and state-level incentives (varies by state)."
+    },
+    {
+      title: "Tax & Policy Benefits",
+      desc: "GST benefits on equipment, faster environmental clearances, and agriculture/rural incentives for crop residue utilization."
+    },
+    {
+      title: "Feedstock & Machinery Subsidy",
+      desc: "Government support for biomass collection equipment — balers, trolleys, and handling systems to streamline supply chains."
+    },
+    {
+      title: "Small & Medium Biogas Subsidy",
+      desc: "₹9,800 to ₹70,000 per smaller plant (size dependent), with additional incentives for SC/ST communities and toilet-linked plants."
+    },
   ];
 
   return (

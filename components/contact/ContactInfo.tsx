@@ -21,9 +21,10 @@ export default function ContactInfo() {
               <Phone className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-bold text-steel-900 mb-1">Sales & Business Development</h3>
-              <p className="text-steel-600 mb-1 font-medium">+91 98XXX XXXXX</p>
-              <p className="text-xs text-amber-600 font-semibold uppercase tracking-wider bg-amber-50 inline-block px-2 py-0.5 rounded border border-amber-200 mt-1">Contact details pending client confirmation</p>
+              <h3 className="font-bold text-steel-900 mb-1">Sales & Marketing</h3>
+              <p className="text-steel-600 font-medium">Mr. Ankit R Jagani</p>
+              <a href="tel:+918200517219" className="text-forest-600 font-medium hover:text-forest-700 transition-colors">+91-82005 17219</a>
+              <p className="text-steel-500 text-sm">info@adonequipment.com</p>
             </div>
           </motion.div>
 
@@ -32,9 +33,10 @@ export default function ContactInfo() {
               <Mail className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-bold text-steel-900 mb-1">Technical / Project Support</h3>
-              <p className="text-steel-600 mb-1 font-medium">projects@adongreenenergy.in</p>
-              <p className="text-xs text-amber-600 font-semibold uppercase tracking-wider bg-amber-50 inline-block px-2 py-0.5 rounded border border-amber-200 mt-1">Contact details pending client confirmation</p>
+              <h3 className="font-bold text-steel-900 mb-1">Project & Service</h3>
+              <p className="text-steel-600 font-medium">Mr. Gajendra Saini</p>
+              <a href="tel:+916357099393" className="text-forest-600 font-medium hover:text-forest-700 transition-colors">+91-63570 99393</a>
+              <p className="text-steel-500 text-sm">biogas@adonequipment.com</p>
             </div>
           </motion.div>
 
@@ -44,8 +46,11 @@ export default function ContactInfo() {
             </div>
             <div>
               <h3 className="font-bold text-steel-900 mb-1">Corporate Office</h3>
-              <p className="text-steel-600 mb-1">Ahmedabad, Gujarat, India</p>
-              <p className="text-xs text-amber-600 font-semibold uppercase tracking-wider bg-amber-50 inline-block px-2 py-0.5 rounded border border-amber-200 mt-1">Address pending client confirmation</p>
+              <p className="text-steel-600 leading-relaxed">
+                B-608, Shalin Square,<br />
+                Near Hathijan Circle, Vatva<br />
+                Ahmedabad - 382445
+              </p>
             </div>
           </motion.div>
         </div>
