@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { servicesData } from "@/lib/data/services";
 
-export const runtime = "edge";
+export const dynamicParams = false;
 import ServicePageClient from "@/components/services/ServicePageClient";
 
 export function generateStaticParams() {
