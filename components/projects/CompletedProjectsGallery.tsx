@@ -30,13 +30,13 @@ export default function CompletedProjectsGallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-elevated transition-shadow border border-steel-100 group"
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-steel-50 shadow-sm hover:shadow-elevated transition-shadow border border-steel-100 group"
             >
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-contain transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
             </motion.div>
