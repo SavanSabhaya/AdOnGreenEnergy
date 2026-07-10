@@ -1,0 +1,7 @@
+Failed https://adongreenenergy.in/turnkey-solution/: HTTP Error 406: Not Acceptable
+Failed https://adongreenenergy.in/procurement/: HTTP Error 406: Not Acceptable
+Failed https://adongreenenergy.in/consultancy/: HTTP Error 406: Not Acceptable
+Failed https://adongreenenergy.in/rd/: HTTP Error 406: Not Acceptable
+Failed https://adongreenenergy.in/om/: HTTP Error 406: Not Acceptable
+Failed https://adongreenenergy.in/bio-cng-retails/: HTTP Error 406: Not Acceptable
+Failed https://adongreenenergy.in/nocs-approvals/: HTTP Error 406: Not Acceptable

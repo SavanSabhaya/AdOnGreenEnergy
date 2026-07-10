@@ -1,4 +1,5 @@
 import ProjectsIntro from "@/components/projects/ProjectsIntro";
+import CompletedProjectsGallery from "@/components/projects/CompletedProjectsGallery";
 import ProjectGrid from "@/components/projects/ProjectGrid";
 import CaseStudyTemplate from "@/components/projects/CaseStudyTemplate";
 import PlantCapacityRange from "@/components/projects/PlantCapacityRange";
@@ -20,6 +21,7 @@ export default function ProjectsPage() {
       </section>
 
       <ProjectsIntro />
+      <CompletedProjectsGallery />
       <ProjectGrid />
       <PlantCapacityRange />
       <CaseStudyTemplate />
