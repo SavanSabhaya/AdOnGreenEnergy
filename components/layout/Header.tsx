@@ -74,11 +74,11 @@ export default function Header() {
             : "bg-white/80 backdrop-blur-md"
         )}
       >
-        <Container className="flex items-center justify-between h-18 lg:h-20">
+        <Container className="flex items-center justify-between h-18 lg:h-20 gap-2">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group" aria-label="ADON Green Energy Home">
-            <div className="relative flex items-center justify-center w-48 h-14">
-              <img src="/images/assets/logo.png" alt="ADON Green Energy" className="object-contain w-full h-full" />
+          <Link href="/" className="flex items-center group shrink-0" aria-label="ADON Green Energy Home">
+            <div className="relative flex items-center justify-start w-32 h-10 sm:w-40 sm:h-12 lg:w-48 lg:h-14">
+              <img src="/images/assets/logo.png" alt="ADON Green Energy" className="object-contain w-full h-full object-left" />
             </div>
           </Link>
 
@@ -133,12 +133,12 @@ export default function Header() {
           </nav>
 
           {/* CTA + Mobile Menu Toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <Button
               href="/contact"
               variant="primary"
               size="sm"
-              className="hidden lg:inline-flex"
+              className="whitespace-nowrap text-[10px] px-2 py-1.5 sm:text-xs sm:px-3 sm:py-2 lg:text-sm lg:px-4 lg:py-2 h-auto"
               id="header-cta"
             >
               Get Consultation
@@ -146,7 +146,7 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-steel-100 transition-colors"
+              className="lg:hidden flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-lg hover:bg-steel-100 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}

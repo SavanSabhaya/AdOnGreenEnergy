@@ -78,29 +78,29 @@ export default function ProcessFlow() {
 
   return (
     <section ref={containerRef} className="relative bg-[#0A1110] text-white h-[400vh]">
-      <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden">
+      <div className="sticky top-0 h-[100svh] w-full flex flex-col justify-center overflow-hidden pt-20 pb-6 lg:py-0">
         
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] opacity-20 mix-blend-overlay" />
         
-        <Container className="relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <Container className="relative z-10 w-full h-full flex flex-col justify-center">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             
-            <div className="relative h-full flex flex-col justify-center">
-              <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gradient-to-r from-forest-900/80 to-forest-800/60 border border-forest-400/30 text-forest-300 text-sm font-bold uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(34,197,94,0.15)] mb-8 w-max backdrop-blur-md">
-                <span className="relative flex h-2.5 w-2.5">
+            <div className="relative flex flex-col justify-center">
+              <div className="inline-flex items-center gap-2 md:gap-3 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-gradient-to-r from-forest-900/80 to-forest-800/60 border border-forest-400/30 text-forest-300 text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(34,197,94,0.15)] mb-4 md:mb-8 w-max backdrop-blur-md">
+                <span className="relative flex h-2 w-2 md:h-2.5 md:w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 md:h-2.5 md:w-2.5 bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
                 </span>
                 Our Technology
               </div>
-              <h2 className="font-heading text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-steel-500">
-                The CBG<br/>Pipeline
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-7xl font-black mb-4 md:mb-6 leading-tight tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-steel-500">
+                The CBG<br className="hidden lg:block"/>Pipeline
               </h2>
-              <p className="text-steel-400 max-w-md text-lg font-light leading-relaxed">
+              <p className="text-steel-400 max-w-md text-sm md:text-lg font-light leading-relaxed">
                 A state-of-the-art process converting raw organic waste into high-purity Compressed Biogas and premium Bio-Fertilizer. Scroll to explore.
               </p>
               
-              <div className="mt-12 h-1 w-full max-w-md bg-steel-900 rounded-full overflow-hidden">
+              <div className="mt-6 md:mt-12 h-1 w-full max-w-md bg-steel-900 rounded-full overflow-hidden hidden md:block">
                 <motion.div 
                   className="h-full bg-gradient-to-r from-forest-500 to-amber-500 origin-left"
                   style={{ scaleX: scrollYProgress }}
@@ -108,7 +108,7 @@ export default function ProcessFlow() {
               </div>
             </div>
 
-            <div className="relative h-[60vh] flex items-center">
+            <div className="relative h-[45vh] lg:h-[60vh] flex items-center mt-4 lg:mt-0">
               {processSteps.map((step, index) => (
                 <ProcessStep 
                   key={step.id} 
