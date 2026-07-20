@@ -16,7 +16,7 @@ export default function CompanyIntro() {
               className="mb-6"
             />
             <p className="text-lg text-steel-600 leading-relaxed mb-6">
-              ADON Equipments is an engineering and technology-driven company focused on development of Compressed Biogas (CBG) and biogas projects in India. We provide integrated solutions converting organic waste and biomass into clean renewable energy.
+              ADON Green Energy is an engineering and technology-driven company focused on development of Compressed Biogas (CBG) and biogas projects in India. We provide integrated solutions converting organic waste and biomass into clean renewable energy.
             </p>
             <p className="text-lg text-steel-600 leading-relaxed">
               We specialize in EPC (Engineering, Procurement & Construction) services: plant design, equipment supply, installation, commissioning, and technical support. Our operations are fully aligned with India's SATAT Scheme (Sustainable Alternative Towards Affordable Transportation).

@@ -24,7 +24,7 @@ export default function ContactInfo() {
               <h3 className="font-bold text-steel-900 mb-1">Sales & Marketing</h3>
               <p className="text-steel-600 font-medium">Mr. Ankit R Jagani</p>
               <a href="tel:+918200517219" className="text-forest-600 font-medium hover:text-forest-700 transition-colors">+91-82005 17219</a>
-              <p className="text-steel-500 text-sm">info@adonequipment.com</p>
+              <p className="text-steel-500 text-sm">info@adongreenenergy.in</p>
             </div>
           </motion.div>
 
@@ -36,7 +36,7 @@ export default function ContactInfo() {
               <h3 className="font-bold text-steel-900 mb-1">Project & Service</h3>
               <p className="text-steel-600 font-medium">Mr. Gajendra Saini</p>
               <a href="tel:+916357099393" className="text-forest-600 font-medium hover:text-forest-700 transition-colors">+91-63570 99393</a>
-              <p className="text-steel-500 text-sm">biogas@adonequipment.com</p>
+              <p className="text-steel-500 text-sm">sales@adongreenenergy.in</p>
             </div>
           </motion.div>
 

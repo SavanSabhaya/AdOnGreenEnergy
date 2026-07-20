@@ -15,7 +15,7 @@ export default function ServicesIntro() {
             className="mb-6"
           />
           <p className="text-lg text-steel-600 leading-relaxed">
-            ADON Equipments provides comprehensive Engineering, Procurement, and Construction (EPC) services. From initial design and technology selection to equipment supply, installation, and final commissioning, we deliver robust, high-performance CBG plants tailored to your specific feedstock and capacity requirements.
+            ADON Green Energy provides comprehensive Engineering, Procurement, and Construction (EPC) services. From initial design and technology selection to equipment supply, installation, and final commissioning, we deliver robust, high-performance CBG plants tailored to your specific feedstock and capacity requirements.
           </p>
         </div>
       </Container>

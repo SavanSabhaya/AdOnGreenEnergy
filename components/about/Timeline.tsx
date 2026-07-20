@@ -9,7 +9,7 @@ const milestones = [
   {
     year: "2017",
     title: "Company Founded",
-    desc: "ADON Equipments Pvt Ltd established in Ahmedabad, Gujarat — focused on biogas and CBG solutions.",
+    desc: "ADON Green Energy Pvt Ltd established in Ahmedabad, Gujarat — focused on biogas and CBG solutions.",
   },
   {
     year: "2019",

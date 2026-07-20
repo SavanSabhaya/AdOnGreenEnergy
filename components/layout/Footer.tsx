@@ -56,9 +56,9 @@ export default function Footer() {
                 <Phone className="h-4 w-4 text-forest-500 shrink-0" />
                 <span>+91-82005 17219</span>
               </a>
-              <a href="mailto:info@adonequipment.com" className="flex items-center gap-3 hover:text-forest-400 transition-colors">
+              <a href="mailto:info@adongreenenergy.in" className="flex items-center gap-3 hover:text-forest-400 transition-colors">
                 <Mail className="h-4 w-4 text-forest-500 shrink-0" />
-                <span>info@adonequipment.com</span>
+                <span>info@adongreenenergy.in</span>
               </a>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function Footer() {
       <div className="border-t border-steel-800">
         <Container className="flex flex-col sm:flex-row items-center justify-between py-6 gap-4 text-caption text-steel-500">
           <p>
-            © {currentYear} ADON Equipments Pvt. Ltd. All rights reserved.
+            © {currentYear} Adon green energy LLP. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/contact" className="hover:text-forest-400 transition-colors">Privacy Policy</Link>

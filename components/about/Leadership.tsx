@@ -16,7 +16,7 @@ const team = [
   {
     name: "Chirag Bhavsar",
     title: "Electrical Engineer / Technical Leader",
-    bio: "Visionary leader with 8+ years of experience in industrial manufacturing. Focus on sustainable energy solutions, operational efficiency, and technological innovation.",
+    bio: "Visionary leader with 15+ years of experience in industrial manufacturing. Focus on sustainable energy solutions, operational efficiency, and technological innovation.",
   },
   {
     name: "Gajendra Saini",

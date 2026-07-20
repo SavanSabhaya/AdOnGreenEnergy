@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     "green energy India",
     "Ahmedabad",
   ],
-  authors: [{ name: "ADON Equipments Pvt. Ltd." }],
-  creator: "ADON Equipments Pvt. Ltd.",
-  publisher: "ADON Equipments Pvt. Ltd.",
+  authors: [{ name: "Adon green energy LLP." }],
+  creator: "Adon green energy LLP.",
+  publisher: "Adon green energy LLP.",
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -88,7 +88,7 @@ export default function RootLayout({
                 {
                   "@type": "Organization",
                   "@id": "https://adongreenenergy.in/#organization",
-                  "name": "ADON Equipments Pvt. Ltd.",
+                  "name": "Adon green energy LLP.",
                   "alternateName": "ADON Green Energy",
                   "url": "https://adongreenenergy.in",
                   "logo": "https://adongreenenergy.in/images/company/about.png",
@@ -97,7 +97,7 @@ export default function RootLayout({
                     "@type": "ContactPoint",
                     "telephone": "+91-82005 17219",
                     "contactType": "sales",
-                    "email": "info@adonequipment.com"
+                    "email": "info@adongreenenergy.in"
                   }
                 },
                 {

@@ -19,7 +19,7 @@ const expertise = [
   },
   {
     icon: Zap,
-    title: "Anaerobic Digestion (CSTR/RCC)",
+    title: "Anaerobic Digestion (Wet/Dry)",
     description: "Advanced CSTR and RCC digesters with mesophilic or thermophilic operation, mechanical agitation, and optimal HRT.",
   },
   {

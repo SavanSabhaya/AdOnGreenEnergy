@@ -203,7 +203,7 @@ export const servicesData: Record<string, ServiceContent> = {
     image: "/images/services/nocs-approvals.webp",
     title: "NOCs & Approvals",
     shortDescription: "Seamless navigation of regulatory frameworks to secure all necessary clearances.",
-    description: "Generation of Biogas from biomethanation of urban waste, including segregated MSW, agricultural waste, industrial effluents, requires strict compliance. Adon Equipments Pvt. Ltd. provides a one-stop destination to fulfill all NOC, authorization, and registration needs to start a biogas plant business under Solid Waste Management Authorizations. We provide all-inclusive support for every segment.",
+    description: "Generation of Biogas from biomethanation of urban waste, including segregated MSW, agricultural waste, industrial effluents, requires strict compliance. Adon green energy LLP. provides a one-stop destination to fulfill all NOC, authorization, and registration needs to start a biogas plant business under Solid Waste Management Authorizations. We provide all-inclusive support for every segment.",
     benefits: [
       {
         title: "Licensing & Approvals",

@@ -32,7 +32,7 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const companyInfo = {
-  name: "ADON Equipments Pvt. Ltd.",
+  name: "Adon green energy LLP.",
   brandName: "ADON Green Energy",
   tagline: "Supporting India's Green Fuel Revolution through CBG",
   description:
@@ -42,7 +42,7 @@ export const companyInfo = {
   mission:
     "To design, build, and commission high-performance CBG plants that maximize output, minimize downtime, and deliver measurable returns — while making India's SATAT vision a reality, one plant at a time.",
   founded: 2018,
-  email: "info@adonequipment.com",
+  email: "info@adongreenenergy.in",
   phone: "+91-82005 17219",
   website: "https://adongreenenergy.in",
   locations: {
@@ -64,19 +64,19 @@ export const companyInfo = {
       name: "Ankit R Jagani",
       title: "Director – Sales & Marketing",
       phone: "+91-82005 17219",
-      email: "info@adonequipment.com",
+      email: "info@adongreenenergy.in",
     },
     projects: {
       name: "Gajendra Saini",
       title: "AGM – CBG Division (Projects & Service)",
       phone: "+91-63570 99393",
-      email: "biogas@adonequipment.com",
+      email: "sales@adongreenenergy.in",
     },
   },
 };
 
 export const milestones = [
-  { year: "2018", title: "Company Founded", description: "ADON Equipments established in Ahmedabad with a vision to serve the emerging CBG sector in India." },
+  { year: "2018", title: "Company Founded", description: "ADON Green Energy established in Ahmedabad with a vision to serve the emerging CBG sector in India." },
   { year: "2019", title: "First EPC Contract", description: "Secured first end-to-end EPC contract for a CBG plant in Gujarat, marking entry into full project delivery." },
   { year: "2020", title: "Manufacturing Facility", description: "Established dedicated manufacturing plant in Mahemdabad for in-house fabrication of critical CBG components." },
   { year: "2021", title: "Multi-State Expansion", description: "Expanded operations to Haryana and Uttarakhand, delivering CBG plants across multiple feedstock categories." },

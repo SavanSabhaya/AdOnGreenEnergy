@@ -76,11 +76,11 @@ export default function Header() {
       >
         <Container className="flex items-center justify-between h-18 lg:h-20 gap-2">
           {/* Logo */}
-          <Link href="/" className="flex items-center group shrink-0" aria-label="ADON Green Energy Home">
+          <a href="/" className="flex items-center group shrink-0" aria-label="ADON Green Energy Home">
             <div className="relative flex items-center justify-start w-32 h-10 sm:w-40 sm:h-12 lg:w-48 lg:h-14">
               <img src="/images/assets/logo.png" alt="ADON Green Energy" className="object-contain w-full h-full object-left" />
             </div>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
@@ -181,11 +181,11 @@ export default function Header() {
               aria-label="Mobile navigation"
             >
               <div className="flex items-center justify-between p-4 border-b border-steel-100">
-                <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
+                <a href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
                   <div className="relative flex items-center justify-center w-40 h-12">
                     <img src="/images/assets/logo.png" alt="ADON Green Energy" className="object-contain w-full h-full" />
                   </div>
-                </Link>
+                </a>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-steel-100"
@@ -279,9 +279,9 @@ export default function Header() {
                     <Phone className="h-4 w-4" />
                     +91-82005 17219
                   </a>
-                  <a href="mailto:info@adonequipment.com" className="flex items-center gap-2 hover:text-forest-600">
+                  <a href="mailto:info@adongreenenergy.in" className="flex items-center gap-2 hover:text-forest-600">
                     <Mail className="h-4 w-4" />
-                    info@adonequipment.com
+                    info@adongreenenergy.in
                   </a>
                 </div>
               </div>
