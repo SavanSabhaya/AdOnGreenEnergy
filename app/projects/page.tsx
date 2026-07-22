@@ -1,5 +1,5 @@
 import ProjectsIntro from "@/components/projects/ProjectsIntro";
-import CompletedProjectsGallery from "@/components/projects/CompletedProjectsGallery";
+import ProjectGallery from "@/components/projects/ProjectGallery";
 import IndiaProjectMap from "@/components/projects/IndiaProjectMap";
 import CaseStudyTemplate from "@/components/projects/CaseStudyTemplate";
 import PlantCapacityRange from "@/components/projects/PlantCapacityRange";
@@ -21,7 +21,7 @@ export default function ProjectsPage() {
       </section>
 
       <ProjectsIntro />
-      <CompletedProjectsGallery />
+      <ProjectGallery />
       <IndiaProjectMap />
       <PlantCapacityRange />
       {/* <CaseStudyTemplate /> */}
