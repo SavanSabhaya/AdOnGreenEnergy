@@ -3,7 +3,6 @@ import { Poppins } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
-import "./globals.css";
 
 const poppins = Poppins({
   variable: "--font-heading",
@@ -78,6 +77,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} ${poppinsBody.variable} h-full antialiased`}>
+      <head>
+        <link rel="stylesheet" href="/tailwind.css" />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <script
           type="application/ld+json"
